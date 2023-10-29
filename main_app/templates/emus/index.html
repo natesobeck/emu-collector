@@ -15,23 +15,24 @@
 <section class="card-container">
   {% for emu in emus %}
     <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
-            src="{% static 'images/skater-emu.png' %}" 
-            alt="A skater boy emu"
-            class="usr-img"
-          >
+      <a href="/emus/{{ emu.id }}">
+        <div class="card-content">
+          <div class="card-img-container">
+            <img 
+              src="{% static 'images/skater-emu.png' %}" 
+              alt="A skater boy emu"
+              class="usr-img"
+          </div>
+          <h2 class="card-title">{{ emu.name }}</h2>
+          {% if emu.age > 0 %}
+            <p>A {{ emu.age }} year old emu.</p>
+          {% else %}
+            <p>A baby emu.</p>
+          {% endif %}
+          <p>{{ emu.attitude }}</p>
+          <p><small>{{ emu.description }}</small></p>
         </div>
-        <h2 class="card-title">{{ emu.name }}</h2>
-        {% if emu.age > 0 %}
-          <p>A {{ emu.age }} year old emu.</p>
-        {% else %}
-          <p>A baby emu.</p>
-        {% endif %}
-        <p>{{ emu.attitude }}</p>
-        <p><small>{{ emu.description }}</small></p>
-      </div>
+      </a>
     </div>
   {% endfor %}
 </section>

@@ -11,3 +11,7 @@ def about(request):
 def emu_index(request):
   emus = Emu.objects.all()
   return render(request, 'emus/index.html', { 'emus': emus })
+
+def emu_detail(request, emu_id):
+  emu = Emu.objects.get(id=emu_id)
+  return render(request, 'emus/detail.html', { 'emu': emu })
