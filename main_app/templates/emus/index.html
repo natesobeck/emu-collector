@@ -15,7 +15,7 @@
 <section class="card-container">
   {% for emu in emus %}
     <div class="card">
-      <a href="/emus/{{ emu.id }}">
+      <a href="{% url 'emu-detail' emu.id %}">
         <div class="card-content">
           <div class="card-img-container">
             <img 
