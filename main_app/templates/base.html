@@ -9,7 +9,7 @@
   <link
     rel="shortcut icon"
     type="image/png"
-    href=""
+    href="{% static 'images/favicon.png' %}"
   >
   <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
   <title>Emu Collector</title>
@@ -21,14 +21,17 @@
     <div class="header-logo-container">
       <a href="/">
         <img 
-          src=""
+          src="{% static 'images/logo.png' %}"
           alt="The Emu Collector Logo"
+          id='logo'
         >
+        <p id='logo-txt'>EMU COLLECTOR</p>
       </a>
     </div>
     <nav>
       <ul>
         <li><a href="/about">About</a></li>
+        <li><a href="/emus">All Emus</a></li>
       </ul>
     </nav>
   </header>
