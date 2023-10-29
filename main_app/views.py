@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def home(request):
   return HttpResponse('<h1>Give me the emus!</h1>')
+
+def about(request):
+  return render(request, 'about.html')
