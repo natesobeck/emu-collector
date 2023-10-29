@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}"/>
+{% endblock %}
 
 {% block content %}
 
-<h1>Emu Collector Home Page</h1>
+<section class="logo-container">
+  <div class="cat-container">
+    <img src="{% static 'images/logo.png' %}" alt="The Emu Collector Logo" />
+  </div>
+  <img 
+    src="{% static 'images/happy-emu.png' %}" 
+    alt="Text reads: Emu Collector"
+  />
+</section>
 
 {% endblock %}
