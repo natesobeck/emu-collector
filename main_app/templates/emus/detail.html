@@ -21,14 +21,14 @@
 
 {% block content %}
 
-<section class="cat-container">
-  <div class="cat-img">
+<section class="emu-container">
+  <div class="emu-img">
     <img 
       src="{% static 'images/skater-emu.png' %}" 
       alt="A skater boy emu"
     >
   </div>
-  <div class="cat-details">
+  <div class="emu-details">
     <h1>{{ emu.name }}</h1>
     {% if emu.age > 0 %}
       <h2>A {{ emu.age }} year old emu</h2>
@@ -37,7 +37,7 @@
     {% endif %}
     <h4>{{ emu.attitude }}</h4>
     <p>{{ emu.description }}</p>
-    <div class='cat-actions'>
+    <div class='emu-actions'>
       <a href="{% url 'emu-update' emu.id %}" class="btn warn">Edit</a>
       <a href="{% url 'emu-delete' emu.id %}" class="btn danger">Delete</a>
     </div>

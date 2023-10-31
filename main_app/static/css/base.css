@@ -94,15 +94,14 @@ nav li {
 }
 
 .header-logo-container {
-  margin: auto;
-  padding: 10px 20px 0;
-  max-width: 500px;
+  display: none;
 }
 
 .page-header {
   display: flex;
   align-items: center;
   margin: 20px;
+
 }
 
 .btn {
@@ -161,6 +160,11 @@ nav li {
   font-size: var(--font-reg);
 }
 
+#logo {
+  height: 35px;
+  border-radius: 10%;
+}
+
 @media only screen and (min-width: 768px) {
   header {
     position: sticky;
@@ -196,10 +200,6 @@ nav li {
     flex-wrap: nowrap;
   }
 
-  .header-logo-container {
-    width: 213px;
-  }
-
   .page-header h1 {
     font-size: var(--font-xtreme);
   }
@@ -211,6 +211,32 @@ nav li {
   
   .page-header img:first-of-type {
     margin-left: 25px;
+  }
+
+  .header-logo-container {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .header-logo-container a {
+    text-decoration: none;
+    color: navy;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  #logo {
+    height: 33px;
+    border-radius: 10%;
+    margin-bottom: 2px;
+    margin-right: 5px;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -246,29 +272,6 @@ nav li {
 
   nav {
     margin-left: auto;
-  }
-
-  .header-logo-container {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .header-logo-container a {
-    text-decoration: none;
-    color: navy;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-weight: bold;
-    font-size: 1.3rem;
-  }
-
-  #logo {
-    height: 35px;
-    border-radius: 10%;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
