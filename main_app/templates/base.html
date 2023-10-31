@@ -30,8 +30,9 @@
     </div>
     <nav>
       <ul>
-        <li><a href="/about">About</a></li>
-        <li><a href="/emus">All Emus</a></li>
+        <li><a href="{% url 'emu-index' %}">All Emus</a></li>
+        <li><a href="{% url 'emu-create' %}">Add an Emu</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
       </ul>
     </nav>
   </header>
