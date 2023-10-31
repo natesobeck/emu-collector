@@ -8,5 +8,6 @@ urlpatterns = [
   path('emus/<int:emu_id>/', views.emu_detail, name='emu-detail'),
   path('emus/create/', views.EmuCreate.as_view(), name='emu-create'),
   path('emus/<int:pk>/update/', views.EmuUpdate.as_view(), name='emu-update'),
-  path('emus/<int:pk>/delete/', views.EmuDelete.as_view(), name='emu-delete')
+  path('emus/<int:pk>/delete/', views.EmuDelete.as_view(), name='emu-delete'),
+  path('emus/<int:emu_id>/add-feeding', views.add_feeding, name='add-feeding')
 ]

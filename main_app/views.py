@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Emu
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .forms import FeedingForm
@@ -30,3 +30,11 @@ class EmuUpdate(UpdateView):
 class EmuDelete(DeleteView):
   model = Emu
   success_url = '/emus/'
+
+def add_feeding(request, emu_id):
+  form = FeedingForm(request.POST)
+  if form.is_valid():
+    new_feeding = form.save(commit=False)
+    new_feeding.emu_id = emu_id
+    new_feeding.save()
+  return redirect('emu-detail', emu_id=emu_id)
