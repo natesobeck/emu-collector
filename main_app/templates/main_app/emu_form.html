@@ -8,7 +8,11 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Add an Emu</h1>
+  {% if emu %}
+    <h1>Edit {{ emu.name }}</h1>
+  {% else %}
+    <h1>Add an Emu</h1>
+  {% endif %}
   <img src="{% static 'images/glasses-emu.png' %}" alt="">
 </div>
 

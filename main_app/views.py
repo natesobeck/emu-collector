@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Emu
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # Create your views here.
 def home(request):
@@ -20,3 +20,11 @@ def emu_detail(request, emu_id):
 class EmuCreate(CreateView):
   model = Emu
   fields = '__all__'
+
+class EmuUpdate(UpdateView):
+  model = Emu
+  fields = ['age', 'attitude', 'description']
+
+class EmuDelete(DeleteView):
+  model = Emu
+  success_url = '/emus/'

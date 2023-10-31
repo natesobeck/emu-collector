@@ -27,6 +27,10 @@
     {% endif %}
     <h4>{{ emu.attitude }}</h4>
     <p>{{ emu.description }}</p>
+    <div class='cat-actions'>
+      <a href="{% url 'emu-update' emu.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'emu-delete' emu.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
 </section>
 
