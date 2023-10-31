@@ -6,9 +6,10 @@
   justify-content: center;
 }
 
-.emu-img {
+.emu-img img {
   width: 75%;
   max-width: 350px;
+  border-radius: 10px;
 }
 
 .usr-img {
