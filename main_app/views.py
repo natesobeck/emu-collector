@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Emu
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from .forms import FeedingForm
 
 # Create your views here.
 def home(request):
@@ -15,7 +16,8 @@ def emu_index(request):
 
 def emu_detail(request, emu_id):
   emu = Emu.objects.get(id=emu_id)
-  return render(request, 'emus/detail.html', { 'emu': emu })
+  feeding_form = FeedingForm()
+  return render(request, 'emus/detail.html', { 'emu': emu, 'feeding_form': feeding_form })
 
 class EmuCreate(CreateView):
   model = Emu

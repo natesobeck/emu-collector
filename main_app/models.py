@@ -20,7 +20,7 @@ class Emu(models.Model):
     return reverse('emu-detail', kwargs={'emu_id': self.id})
   
 class Feeding(models.Model):
-  date = models.DateField()
+  date = models.DateField('Feeding Date')
   meal = models.CharField(
     max_length=1,
     choices=MEALS,
