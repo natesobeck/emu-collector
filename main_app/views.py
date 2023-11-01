@@ -17,8 +17,9 @@ def emu_index(request):
 
 def emu_detail(request, emu_id):
   emu = Emu.objects.get(id=emu_id)
+  unassigned_bowties = BowTie.objects.exclude(id__in = emu.bowties.all().values_list('id'))
   feeding_form = FeedingForm()
-  return render(request, 'emus/detail.html', { 'emu': emu, 'feeding_form': feeding_form })
+  return render(request, 'emus/detail.html', { 'emu': emu, 'feeding_form': feeding_form, 'bowties': unassigned_bowties })
 
 class EmuCreate(CreateView):
   model = Emu
@@ -56,4 +57,8 @@ def add_feeding(request, emu_id):
     new_feeding = form.save(commit=False)
     new_feeding.emu_id = emu_id
     new_feeding.save()
+  return redirect('emu-detail', emu_id=emu_id)
+
+def assoc_bowtie(request, emu_id, bowtie_id):
+  Emu.objects.get(id=emu_id).bowties.add(bowtie_id)
   return redirect('emu-detail', emu_id=emu_id)

@@ -159,6 +159,11 @@
   border-bottom: rgb(36, 116, 248) solid 2px;
 }
 
+.bowtie-container {
+  display: flex;
+  align-items: center;
+}
+
 .feedings tr:nth-child(even) {
   background-color: #f3f3fd;
 }

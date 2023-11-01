@@ -14,5 +14,6 @@ urlpatterns = [
   path('bowties/<int:pk>/', views.BowTieDetail.as_view(), name='bowtie-detail'),
   path('bowties/', views.BowTieList.as_view(), name='bowtie-index'),
   path('bowties/<int:pk>/update/', views.BowTieUpdate.as_view(), name='bowtie-update'),
-  path('bowties/<int:pk>/delete/', views.BowTieDelete.as_view(), name='bowtie-delete')
+  path('bowties/<int:pk>/delete/', views.BowTieDelete.as_view(), name='bowtie-delete'),
+  path('emus/<int:emu_id>/assoc-bowtie/<int:bowtie_id>/', views.assoc_bowtie, name='assoc-bowtie')
 ]
