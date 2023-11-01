@@ -42,6 +42,14 @@ class BowTieList(ListView):
 class BowTieDetail(DetailView):
   model = BowTie
 
+class BowTieUpdate(UpdateView):
+  model = BowTie
+  fields = ['color', 'cost']
+
+class BowTieDelete(DeleteView):
+  model = BowTie
+  success_url = '/bowties/'
+
 def add_feeding(request, emu_id):
   form = FeedingForm(request.POST)
   if form.is_valid():
