@@ -8,6 +8,16 @@ MEALS = (
   ('D', 'Dinner')
 )
 
+class BowTie(models.Model):
+  color = models.CharField(max_length=20)
+  cost = models.IntegerField()
+
+  def __str__(self):
+    return self.name
+  
+  def get_absolute_url(self):
+    return reverse('bowtie-detail', kwargs={'pk': self.id})
+
 class Emu(models.Model):
   name = models.CharField(max_length=100)
   age = models.IntegerField()
@@ -38,4 +48,3 @@ class Feeding(models.Model):
   
   class Meta:
     ordering = ['-date']
-
