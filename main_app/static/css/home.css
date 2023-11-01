@@ -12,19 +12,33 @@ main > section {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .header-logo-container {
   display: none;
 }
 
-.logo-container {
+.home-logo-container {
   max-width: 375px;
+  gap: 30px;
 }
 
 .emu-container {
   width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emu-container img {
+  border-radius: 10px;
+}
+
+#home-img, #home-logo {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
 }
 
 .login {
@@ -80,7 +94,7 @@ main > section {
     width: 100%;
   }
 
-  .logo-container {
+  .home-logo-container {
     max-width: 520px;
   }
 }

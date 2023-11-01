@@ -7,14 +7,34 @@
 
 {% block content %}
 
-<section class="logo-container">
-  <div class="emu-container">
-    <img src="{% static 'images/logo.png' %}" alt="The Emu Collector Logo" />
-  </div>
+<section class="home-logo-container">
+  <img src="{% static 'images/logo.png' %}" alt="The Emu Collector Logo" id='home-logo'/>
   <img 
     src="{% static 'images/happy-emu.png' %}" 
-    alt="Text reads: Emu Collector"
+    alt="A happy emu"
+    id='home-img'
   />
+  <img 
+    src="{% static 'images/skater-emu.png' %}" 
+    alt="A skater emu"
+    id='home-img'
+  />
+  <img 
+    src="{% static 'images/bowtie-emu.png' %}" 
+    alt="An emu with a red bow tie"
+    id='home-img'
+  />
+</section>
+
+
+<section>
+  <form action="{% url 'home' %}" method="post" class="login">
+    <h1>Login</h1>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}">
+    <button type="submit" class="btn submit">Login</button>
+  </form>
 </section>
 
 {% endblock %}
