@@ -23,6 +23,7 @@ class Emu(models.Model):
   age = models.IntegerField()
   attitude = models.CharField(max_length=100)
   description = models.TextField(max_length=250)
+  bowties = models.ManyToManyField(BowTie)
 
   def __str__(self):
       return self.name

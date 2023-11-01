@@ -22,7 +22,7 @@ def emu_detail(request, emu_id):
 
 class EmuCreate(CreateView):
   model = Emu
-  fields = '__all__'
+  fields = ['name', 'age', 'attitude', 'description']
 
 class EmuUpdate(UpdateView):
   model = Emu
