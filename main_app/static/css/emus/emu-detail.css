@@ -57,19 +57,19 @@
 
 .unfed,
 .fed,
-.no-toys,
-.all-toys {
+.no-bowties,
+.all-bowties {
   margin: 0;
   font-weight: bold;
 }
 
 .unfed,
-.no-toys {
+.no-bowties {
   color: var(--danger);
 }
 
 .fed,
-.all-toys {
+.all-bowties {
   color: var(--submit);
 }
 
@@ -118,13 +118,13 @@
 }
 
 .feedings h2,
-.toys h2 {
+.bowties h2 {
   font-size: 3.2rem;
   margin: 0;
 }
 
 .feedings h3,
-.toys h3 {
+.bowties h3 {
   font-size: var(--font-xl);
   margin: 10px 0;
 }
@@ -163,16 +163,16 @@
   background-color: #f3f3fd;
 }
 
-.toy-container p {
+.bowtie-container p {
   margin: 12px 0;
 }
 
-.toy-container a {
+.bowtie-container a {
   text-decoration: none;
   color: #111;
 }
 
-.toy-container .btn {
+.bowtie-container .btn {
   padding: 3px 10px;
   margin-left: 10px;
 }
