@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/bowties/bowtie-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+  
+<div class="card" style="border-color: {{ bowtie.color }}">
+  <div class="card-bg" style="background-color: {{ bowtie.color }}"></div>
+  <div class="card-content">
+    <h2>{{ bowtie.color }} bow tie</h2>
+    <p>${{ bowtie.cost }}</p>
+  </div>
+</div>
+<a href="{% url 'bowtie-update' bowtie.id %}" class="btn warn">Edit</a>
+<a href="{% url 'bowtie-delete' bowtie.id %}" class="btn danger">Delete</a>
+
+{% endblock %}

@@ -13,7 +13,7 @@ class BowTie(models.Model):
   cost = models.IntegerField()
 
   def __str__(self):
-    return self.name
+    return self.color
   
   def get_absolute_url(self):
     return reverse('bowtie-detail', kwargs={'pk': self.id})

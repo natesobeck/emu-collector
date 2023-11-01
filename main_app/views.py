@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Emu, BowTie
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .forms import FeedingForm
 
@@ -34,6 +35,12 @@ class EmuDelete(DeleteView):
 class BowTieCreate(CreateView):
   model = BowTie
   fields = '__all__'
+
+class BowTieList(ListView):
+  model = BowTie
+
+class BowTieDetail(DetailView):
+  model = BowTie
 
 def add_feeding(request, emu_id):
   form = FeedingForm(request.POST)

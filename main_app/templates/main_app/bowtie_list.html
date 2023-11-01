@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/bowties/bowtie-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>All Emu Bow Ties</h1>
+  <img src="{% static 'images/baby-skater-emu.png' %}" alt="A baby skater boy emu." />
+  <img src="{% static 'images/bowtie-emu.png' %}" alt="An emu in a red bow tie." />
+  <img src="{% static 'images/contented-emu.png' %}" alt="A contented emu." />
+  <img src="{% static 'images/science-emu.png' %}" alt="A scientist emu." />
+</section>
+
+<section class="card-container">
+  {% for bowtie in bowtie_list %}
+  <div class="card" style="border-color: {{ bowtie.color }}">
+    <div class="card-bg" style="background-color: {{ bowtie.color }}"></div>
+    <a href="{% url 'bowtie-detail' bowtie.id %}">
+      <div class="card-content">
+        <h2>{{ bowtie.color }} bow tie</h2>
+        <p>${{ bowtie.cost }}</p>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
